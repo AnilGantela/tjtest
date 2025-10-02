@@ -1,6 +1,6 @@
 // NavBar.tsx
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   NavBarContainer,
   NavLinks,
@@ -11,10 +11,15 @@ import {
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigator = useNavigate();
 
   return (
     <NavBarContainer>
-      <NavLogoImg src="/nav-logo1.svg" alt="Logo" />
+      <NavLogoImg
+        onClick={() => navigator("/")}
+        src="/nav-logo1.svg"
+        alt="Logo"
+      />
 
       {/* Hamburger for small devices */}
       <Hamburger onClick={() => setMenuOpen(!menuOpen)}>

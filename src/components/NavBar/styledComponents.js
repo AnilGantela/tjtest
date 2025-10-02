@@ -8,9 +8,7 @@ export const NavBarContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 8vh;
-  border: 2px solid black;
   box-sizing: border-box;
-  overflow: hidden;
   position: relative;
 `;
 
@@ -33,7 +31,7 @@ export const NavLinks = styled.ul`
     transition: color 0.3s ease;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 426px) {
     display: none; /* hide desktop nav links on small devices */
   }
 `;
@@ -42,7 +40,10 @@ export const NavLogoImg = styled.img`
   height: 5vh;
   width: auto;
   background: transparent;
-  border: 2px solid black;
+  margin-left: 2vh;
+  @media (max-width: 425px) {
+    height: 4vh;
+  }
 `;
 
 export const Hamburger = styled.div`
@@ -50,16 +51,16 @@ export const Hamburger = styled.div`
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  margin-right: 10px;
+  margin-right: 5px;
 
   span {
     width: 25px;
     height: 3px;
-    background: black;
+    background: white;
     border-radius: 2px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 426px) {
     display: flex; /* show hamburger on small devices */
   }
 `;
@@ -69,27 +70,28 @@ export const MobileMenu = styled.ul`
   position: absolute;
   top: 8vh;
   right: 0;
-  width: 200px;
+  width: 100%;
   background: #efbd04;
-  border: 2px solid black;
   display: flex;
   flex-direction: column;
   gap: 15px;
   padding: 15px;
+  color: white;
   z-index: 1000;
 
   li {
     font-size: 18px;
     font-weight: 500;
-    text-align: right;
+    text-align: left;
+    border-bottom: 1px solid white;
   }
 
   a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
   a:hover {
-    color: white;
+    color: black;
     transition: color 0.3s ease;
   }
 `;
