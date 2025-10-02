@@ -21,7 +21,7 @@ function Layout({ children }) {
   return (
     <>
       {!shouldHideLayout && <Navbar />}
-      <div style={{ paddingTop: shouldHideLayout ? "0" : "9vh" }}>
+      <div style={{ paddingTop: shouldHideLayout ? "0" : "8vh" }}>
         {children}
       </div>
       {!shouldHideLayout && <Footer />}

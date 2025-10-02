@@ -1,16 +1,38 @@
+// HomeDashboard.jsx
 import React from "react";
-import { HomeBannerContainer } from "./styledComponents";
+import {
+  HeroSection,
+  Overlay,
+  Tagline,
+  HomeDashboardContainer,
+  CornerImage,
+} from "./styledComponents";
 
-const HomeBanner = () => {
+const HomeDashboard = () => {
   return (
-    <HomeBannerContainer>
-      <div className="home-banner__content">
-        <h1>Welcome to Talents Junction</h1>
-        <p>Your gateway to discovering and connecting with top talent.</p>
-        <button className="home-banner__cta">Get Started</button>
-      </div>
-    </HomeBannerContainer>
+    <HomeDashboardContainer>
+      <HeroSection>
+        {/* Top-left image */}
+        <CornerImage
+          src="/home-banner2.svg"
+          alt="IoT & Robotics Top"
+          position="top-left"
+        />
+
+        {/* Bottom-right image */}
+        <CornerImage
+          src="/home-banner1.svg"
+          alt="IoT & Robotics Bottom"
+          position="bottom-right"
+        />
+
+        <Overlay />
+        <Tagline>
+          “Building the Next Generation of Innovators through IoT & Robotics”
+        </Tagline>
+      </HeroSection>
+    </HomeDashboardContainer>
   );
 };
 
-export default HomeBanner;
+export default HomeDashboard;

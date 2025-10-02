@@ -7,7 +7,10 @@ const Footer = () => (
       color: "#fff",
       padding: "1rem 0",
       textAlign: "center",
-      marginTop: "auto",
+      bottom: 0,
+      width: "100%",
+      position: "fixed",
+      marginTop: "2vh",
     }}
   >
     <div>
