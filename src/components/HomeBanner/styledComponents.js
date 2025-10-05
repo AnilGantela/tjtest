@@ -5,6 +5,9 @@ export const HomeDashboardContainer = styled.div`
   justify-content: center;
   width: 96%;
   margin: 10px auto;
+  -webkit-scroll-bar: none; /* for Chrome, Safari, and Opera */
+  -ms-overflow-style: none; /* for Internet Explorer and Edge */
+  scrollbar-width: none; /* for Firefox */
 `;
 
 export const HeroSection = styled.div`

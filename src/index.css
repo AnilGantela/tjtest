@@ -3,3 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+html,
+body {
+  overflow-y: auto; /* allows scroll */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 🧩 Hide scrollbars in Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}

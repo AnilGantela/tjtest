@@ -9,7 +9,7 @@ const Footer = () => (
       textAlign: "center",
       bottom: 0,
       width: "100%",
-      position: "fixed",
+
       marginTop: "2vh",
     }}
   >

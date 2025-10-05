@@ -7,10 +7,18 @@ export const NavBarContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  margin: 10px auto;
+
+  /* 🧩 Fix position and center horizontally */
+  position: fixed;
+  top: 10px; /* distance from top */
+  left: 50%;
+  transform: translateX(-50%); /* centers the navbar */
+  z-index: 1000;
+
+  -webkit-scroll-bar: none; /* for Chrome, Safari, and Opera */
+  -ms-overflow-style: none; /* for Internet Explorer and Edge */
+  scrollbar-width: none; /* for Firefox */
   padding: 10px;
-  z-index: 1000; /* 🧩 ensures navbar and menu appear above all */
 
   /* 🖤 Glossy Dark Glassmorphism Style */
   background: rgba(0, 0, 0, 0.65);
