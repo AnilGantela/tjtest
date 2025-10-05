@@ -1,21 +1,31 @@
 import React, { useRef, useState, useEffect } from "react";
-import { OwnersSection, FoundersImage } from "./styledComponents";
+import {
+  OwnersSection,
+  TextSection,
+  ShortHeadLine,
+  HeadLine,
+  Description1,
+  Description2,
+  PhotosSection,
+  CarouselTrack,
+  CarouselItem,
+} from "./styledComponents";
+const images = ["/founder1.jpg", "/founder2.jpg", "/founder3.jpg"];
 
 const Owners = () => {
   const sectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
 
+  // Scroll-triggered visibility
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true); // trigger animation
-          observer.unobserve(entry.target); // optional: only animate once
+          setIsVisible(true);
+          observer.unobserve(entry.target); // animate only once
         }
       },
-      {
-        threshold: 0.3, // 30% visible triggers the animation
-      }
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) {
@@ -25,9 +35,35 @@ const Owners = () => {
     return () => observer.disconnect();
   }, []);
 
+  const duplicatedImages = [
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+    ...images,
+  ]; // Duplicate for seamless loop
+
   return (
     <OwnersSection ref={sectionRef} isVisible={isVisible}>
-      <FoundersImage src="/founders_image.jpg" alt="Founder" />
+      <TextSection>
+        <ShortHeadLine>Our Team</ShortHeadLine>
+        <HeadLine>Meet the Minds Behind the Creativity</HeadLine>
+        <Description1>
+          Our team's synergy is the key to bringing your ideas to life.
+        </Description1>
+      </TextSection>
+      <PhotosSection>
+        <CarouselTrack>
+          {duplicatedImages.map((src, idx) => (
+            <CarouselItem key={idx}>
+              <img src={src} alt={`Founder ${idx + 1}`} />
+            </CarouselItem>
+          ))}
+        </CarouselTrack>
+      </PhotosSection>
+      <Description2>
+        Our team's synergy is the key to bringing your ideas to life.
+      </Description2>
     </OwnersSection>
   );
 };
