@@ -67,7 +67,7 @@ export const HeadLine = styled.h2`
   font-size: 4rem;
   margin-bottom: 15px;
   font-weight: 700;
-  color: #222;
+  color: #fff;
 
   @media (max-width: 768px) {
     font-size: 3rem;

@@ -8,6 +8,7 @@ body {
   overflow-y: auto; /* allows scroll */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  background-image: url("/public/home-banner2.svg");
 }
 
 /* 🧩 Hide scrollbars in Chrome, Safari, and Opera */

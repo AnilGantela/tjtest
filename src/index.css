@@ -9,6 +9,11 @@ body {
   overflow-y: auto; /* allows scroll */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  background-image: url("/body.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
 }
 
 /* 🧩 Hide scrollbars in Chrome, Safari, and Opera */

@@ -12,4 +12,5 @@ export const HomeContainer = styled.div`
   -webkit-scroll-bar: none; /* for Chrome, Safari, and Opera */
   -ms-overflow-style: none; /* for Internet Explorer and Edge */
   scrollbar-width: none; /* for Firefox */
+  background: transparent;
 `;
