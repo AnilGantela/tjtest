@@ -1,15 +1,29 @@
 import styled from "styled-components";
 
 export const NavBarContainer = styled.div`
-  background-color: #efbd04;
-  width: 100%;
+  width: 95%;
+  height: 8vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 8vh;
-  box-sizing: border-box;
   position: relative;
+  margin: 10px auto;
+  padding: 10px;
+  z-index: 1000; /* 🧩 ensures navbar and menu appear above all */
+
+  /* 🖤 Glossy Dark Glassmorphism Style */
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0.8)
+  );
 `;
 
 export const NavLinks = styled.ul`
@@ -24,7 +38,7 @@ export const NavLinks = styled.ul`
 
   a {
     text-decoration: none;
-    color: black;
+    color: white;
   }
   a:hover {
     color: white;
@@ -32,17 +46,18 @@ export const NavLinks = styled.ul`
   }
 
   @media (max-width: 426px) {
-    display: none; /* hide desktop nav links on small devices */
+    display: none;
   }
 `;
 
 export const NavLogoImg = styled.img`
-  height: 5vh;
+  height: 16vh;
   width: auto;
   background: transparent;
   margin-left: 2vh;
+
   @media (max-width: 425px) {
-    height: 4vh;
+    height: 10vh;
   }
 `;
 
@@ -61,7 +76,7 @@ export const Hamburger = styled.div`
   }
 
   @media (max-width: 426px) {
-    display: flex; /* show hamburger on small devices */
+    display: flex;
   }
 `;
 
@@ -77,7 +92,8 @@ export const MobileMenu = styled.ul`
   gap: 15px;
   padding: 15px;
   color: white;
-  z-index: 1000;
+  border-radius: 0 0 12px 12px;
+  z-index: 1100; /* 🚀 ensures mobile menu appears above everything */
 
   li {
     font-size: 18px;
