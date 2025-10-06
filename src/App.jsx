@@ -3,6 +3,7 @@ import { useState } from "react";
 import Navbar from "./components/NavBar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import HiringForm from "./pages/HiringForm";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -38,6 +39,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/hiring-form" element={<HiringForm />} />
             </Routes>
           </Layout>
         }
