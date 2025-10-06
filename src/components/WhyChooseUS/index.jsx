@@ -91,7 +91,7 @@ const WhyChooseUs = () => {
             data-index={index}
             ref={(el) => (cardRefs.current[index] = el)}
             isVisible={visibleCards.includes(String(index))}
-            backgroundColor="rgba(20, 20, 40, 0.85)"
+            backgroundColor="rgba(20, 20, 40, 0.75)"
           >
             <CardTitle textColor={card.color}>{card.title}</CardTitle>
             <CardDescription>{card.desc}</CardDescription>

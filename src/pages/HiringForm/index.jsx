@@ -76,7 +76,6 @@ const HiringForm = () => {
           <option>HR Executive</option>
           <option>AI Prompt & Tool Specialist</option>
           <option>IoT Engineer</option>
-          <option>Content Writer</option>
           <option>Web Developer</option>
         </Select>
 

@@ -79,7 +79,7 @@ export const HeadLine = styled.h2`
 
 export const Description1 = styled.p`
   font-size: 1.1rem;
-  color: #555;
+  color: #a20cdf;
   line-height: 1.6;
   margin-bottom: 25px;
   font-weight: 500;
