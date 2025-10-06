@@ -15,6 +15,7 @@ function Layout({ children }) {
     "/forgot-password",
     "/payment",
     "/account-deletion",
+    "/hiring-form",
   ];
 
   const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
