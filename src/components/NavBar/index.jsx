@@ -39,6 +39,9 @@ const NavBar = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
+        <li>
+          <Link to="/hiring-form">Hiring</Link>
+        </li>
       </NavLinks>
 
       {/* Mobile Menu (visible when hamburger clicked) */}
