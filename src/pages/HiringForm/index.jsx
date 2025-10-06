@@ -80,7 +80,9 @@ const HiringForm = () => {
           <option>Web Developer</option>
         </Select>
 
-        <Label htmlFor="resume">Upload Resume (PDF)</Label>
+        <Label htmlFor="resume">
+          Upload Resume (PDF) <span style={{ color: "red" }}>{"<"}50kb</span>
+        </Label>
         <FileUploadWrapper>
           <FileUploadButton>Click to upload your resume</FileUploadButton>
           <input
@@ -94,7 +96,7 @@ const HiringForm = () => {
           <FileInfo>{fileName}</FileInfo>
         </FileUploadWrapper>
 
-        <Label htmlFor="message">Message</Label>
+        <Label htmlFor="message">Why Should We Hire You</Label>
         <TextArea
           id="message"
           name="Message"

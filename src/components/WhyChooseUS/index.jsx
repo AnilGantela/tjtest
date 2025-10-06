@@ -1,92 +1,105 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import {
   WhyChooseUsContainer,
+  TextContainer,
   SecondaryTitle,
   PrimaryTitle,
-  TextContainer,
   CardContainer,
   Card,
   CardTitle,
   CardDescription,
 } from "./styledComponents";
 
-const WhyChooseUS = () => {
-  const sectionRef = useRef();
-  const [isVisible, setIsVisible] = useState(false);
+const WhyChooseUs = () => {
+  const containerRef = useRef(null);
+  const cardRefs = useRef([]);
+  const [visibleCards, setVisibleCards] = useState([]);
+  const [containerVisible, setContainerVisible] = useState(false);
 
-  // Scroll-triggered visibility
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target); // animate only once
-        }
+    // For desktop - animate whole container
+    const containerObserver = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) setContainerVisible(true);
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (containerRef.current) {
+      containerObserver.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
+    // For mobile - animate individual cards
+    const cardObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = entry.target.getAttribute("data-index");
+            setVisibleCards((prev) => [...new Set([...prev, index])]);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    cardRefs.current.forEach((ref) => ref && cardObserver.observe(ref));
+
+    return () => {
+      if (containerRef.current)
+        containerObserver.unobserve(containerRef.current);
+      cardRefs.current.forEach((ref) => ref && cardObserver.unobserve(ref));
+    };
   }, []);
 
+  const cardData = [
+    {
+      title: "Creative Excellence",
+      color: "#7801e7",
+      desc: "We turn our robotics experience into fun, hands-on learning for every student.",
+    },
+    {
+      title: "Experienced Professionals",
+      color: "#a20cdf",
+      desc: "Founded by competition-winning innovators with real-world Robotics & IoT expertise.",
+    },
+    {
+      title: "Tailored Solutions",
+      color: "#f10f7f",
+      desc: "Courses and kits designed to suit school kids and college students alike.",
+    },
+    {
+      title: "Innovative Approach",
+      color: "#fe6306",
+      desc: "We combine practical projects, competitions, and mentorship to spark true innovation.",
+    },
+  ];
+
   return (
-    <WhyChooseUsContainer ref={sectionRef} isVisible={isVisible}>
+    <WhyChooseUsContainer
+      ref={containerRef}
+      containerVisible={containerVisible}
+    >
       <TextContainer>
-        <SecondaryTitle>Why Choose </SecondaryTitle>
+        <SecondaryTitle>Why Choose</SecondaryTitle>
         <PrimaryTitle>Talents Junction?</PrimaryTitle>
       </TextContainer>
+
       <CardContainer>
-        <Card
-          backgroundColor="rgba(10, 10, 30, 0.75)"
-          ref={sectionRef}
-          isVisible={isVisible}
-        >
-          <CardTitle textColor="#7801e7">Creative Excellence</CardTitle>
-          <CardDescription>
-            “We turn our robotics experience into fun, hands-on learning for
-            every student. ”
-          </CardDescription>
-        </Card>
-        <Card
-          backgroundColor="rgba(10, 10, 30, 0.75)"
-          ref={sectionRef}
-          isVisible={isVisible}
-        >
-          <CardTitle textColor="#a20cdf">Experienced Professionals</CardTitle>
-          <CardDescription>
-            “Founded by competitionwinning innovators with realworld Robotics &
-            IoT expertise. ”
-          </CardDescription>
-        </Card>
-        <Card
-          backgroundColor="rgba(10, 10, 30, 0.75)"
-          ref={sectionRef}
-          isVisible={isVisible}
-        >
-          <CardTitle textColor="#f10f7f">Tailored Solutions</CardTitle>
-          <CardDescription>
-            “Courses and kits designed to suit school kids and college students
-            alike. ”
-          </CardDescription>
-        </Card>
-        <Card
-          backgroundColor="rgba(10, 10, 30, 0.75)"
-          ref={sectionRef}
-          isVisible={isVisible}
-        >
-          <CardTitle textColor="#fe6306">Innovative Approach</CardTitle>
-          <CardDescription>
-            “We combine practical projects, competitions, and mentorship to
-            spark true innovation. ”
-          </CardDescription>
-        </Card>
+        {cardData.map((card, index) => (
+          <Card
+            key={index}
+            data-index={index}
+            ref={(el) => (cardRefs.current[index] = el)}
+            isVisible={visibleCards.includes(String(index))}
+            backgroundColor="rgba(20, 20, 40, 0.85)"
+          >
+            <CardTitle textColor={card.color}>{card.title}</CardTitle>
+            <CardDescription>{card.desc}</CardDescription>
+          </Card>
+        ))}
       </CardContainer>
     </WhyChooseUsContainer>
   );
 };
 
-export default WhyChooseUS;
+export default WhyChooseUs;
