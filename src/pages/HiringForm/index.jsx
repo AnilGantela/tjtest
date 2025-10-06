@@ -1,98 +1,111 @@
-import React from "react";
+// src/pages/HiringForm/index.jsx
+import React, { useState } from "react";
 import {
-  Container,
+  PageWrapper,
   Header,
   Title,
-  Logo,
-  Subtitle,
+  SubTitle,
   FormContainer,
-  Form,
   Label,
   Input,
   Select,
   TextArea,
   Button,
+  FileUploadWrapper,
+  FileUploadButton,
+  FileInfo,
   RobotComponent,
   SensorIcon,
   CircuitLine,
 } from "./styledComponents";
 
 const HiringForm = () => {
+  const [fileName, setFileName] = useState("No file chosen");
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    setFileName(file ? file.name : "No file chosen");
+  };
+
   return (
-    <Container>
+    <PageWrapper>
       <Header>
         <Title>
-          <Logo src="nav-logo1.svg" alt="Talents Junction Logo" />
+          <img src="/nav-logo1.svg" alt="Talents Junction Logo" />
           Talents Junction
         </Title>
-        <Subtitle>Connecting talents with tomorrow.</Subtitle>
+        <SubTitle>Connecting talents with tomorrow.</SubTitle>
       </Header>
 
-      <FormContainer>
+      <FormContainer
+        action="https://formsubmit.co/myselfarjun449@gmail.com"
+        method="POST"
+        encType="multipart/form-data"
+      >
+        {/* Hidden Fields */}
+        <input type="hidden" name="_captcha" value="false" />
+        <input
+          type="hidden"
+          name="_next"
+          value="https://tjtest.vercel.app/thankyou"
+        />
+
         <h2>Join Our Team</h2>
-        <Form
-          action="https://formsubmit.co/tanushpothina@gmail.com"
-          method="POST"
-          encType="multipart/form-data"
-        >
-          {/* Hidden fields */}
-          <input type="hidden" name="_captcha" value="false" />
+
+        <Label htmlFor="name">Full Name</Label>
+        <Input
+          type="text"
+          id="name"
+          name="Name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <Label htmlFor="email">Email</Label>
+        <Input
+          type="email"
+          id="email"
+          name="Email"
+          placeholder="Enter your email"
+          required
+        />
+
+        <Label htmlFor="role">Select Role</Label>
+        <Select id="role" name="Role Applied" required>
+          <option value="">-- Choose a role --</option>
+          <option>HR Executive</option>
+          <option>AI Prompt & Tool Specialist</option>
+          <option>IoT Engineer</option>
+          <option>Content Writer</option>
+          <option>Web Developer</option>
+        </Select>
+
+        <Label htmlFor="resume">Upload Resume (PDF)</Label>
+        <FileUploadWrapper>
+          <FileUploadButton>Click to upload your resume</FileUploadButton>
           <input
-            type="hidden"
-            name="_next"
-            value="https://yourwebsite.com/thank-you.html"
-          />
-
-          <Label htmlFor="name">Full Name</Label>
-          <Input
-            type="text"
-            id="name"
-            name="Name"
-            placeholder="Enter your name"
-            required
-          />
-
-          <Label htmlFor="email">Email</Label>
-          <Input
-            type="email"
-            id="email"
-            name="Email"
-            placeholder="Enter your email"
-            required
-          />
-
-          <Label htmlFor="role">Select Role</Label>
-          <Select id="role" name="Role Applied" required>
-            <option value="">-- Choose a role --</option>
-            <option>HR Executive</option>
-            <option>AI Prompt & Tool Specialist</option>
-            <option>IoT Engineer</option>
-            <option>Content Writer</option>
-            <option>Web Developer</option>
-          </Select>
-
-          <Label htmlFor="resume">Upload Resume (PDF)</Label>
-          <Input
             type="file"
             id="resume"
             name="attachment"
             accept=".pdf"
+            onChange={handleFileChange}
             required
           />
+          <FileInfo>{fileName}</FileInfo>
+        </FileUploadWrapper>
 
-          <Label htmlFor="message">Message</Label>
-          <TextArea
-            id="message"
-            name="Message"
-            rows="4"
-            placeholder="Tell us why you're the right fit..."
-          />
+        <Label htmlFor="message">Message</Label>
+        <TextArea
+          id="message"
+          name="Message"
+          rows="4"
+          placeholder="Tell us why you're the right fit..."
+        />
 
-          <Button type="submit">Submit Application</Button>
-        </Form>
+        <Button type="submit">Submit Application</Button>
       </FormContainer>
 
-      {/* Floating Animations */}
+      {/* Background Animated Elements */}
       <RobotComponent style={{ top: "20%", left: "5%", animationDelay: "1s" }}>
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
           <rect
@@ -148,7 +161,7 @@ const HiringForm = () => {
       <CircuitLine
         style={{ bottom: "40%", width: "120px", animationDelay: "12s" }}
       />
-    </Container>
+    </PageWrapper>
   );
 };
 
