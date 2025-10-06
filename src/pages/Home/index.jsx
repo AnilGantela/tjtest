@@ -2,6 +2,7 @@ import React from "react";
 import HomeBanner from "../../components/HomeBanner";
 import { HomeContainer } from "./styledComponents";
 import Owners from "../../components/Owners";
+import WhyChooseUS from "../../components/WhyChooseUS";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
         <h1>Welcome to Talents Junction</h1>
         <p>Your gateway to discovering and showcasing talent.</p>
       </div>
+      <WhyChooseUS />
       <Owners />
     </HomeContainer>
   );
