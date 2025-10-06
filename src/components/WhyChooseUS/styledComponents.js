@@ -62,7 +62,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 5vh;
 `;
 
 export const Card = styled.div`

@@ -20,7 +20,7 @@ const slideInfinite = keyframes`
 
 export const OwnersSection = styled.div`
   width: 85%;
-  margin: 20px auto;
+  margin: 90px auto;
   overflow: hidden;
   box-sizing: border-box;
   position: relative;

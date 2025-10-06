@@ -14,10 +14,10 @@ const fadeSlideUp = keyframes`
 
 export const WhyChooseUsContainer = styled.section`
   color: #fff;
-  padding: 80px 0;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -28,11 +28,17 @@ export const WhyChooseUsContainer = styled.section`
       opacity: 1;
       transform: translateY(0);
     `}
+  @media (max-width: 480px) {
+    align-items: center;
+  }
 `;
 
 export const TextContainer = styled.div`
-  text-align: center;
+  text-align: left;
   margin-bottom: 50px;
+  @media (max-width: 480px) {
+    text-align: center;
+  }
 `;
 
 export const SecondaryTitle = styled.h3`
@@ -62,7 +68,7 @@ export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 50px;
 `;
 
 export const Card = styled.div`
@@ -108,7 +114,7 @@ export const CardTitle = styled.h4`
 export const CardDescription = styled.p`
   font-size: 1rem;
   line-height: 1.5;
-  color: #ddd;
+  color: ${(props) => props.textColor || "#ccc"};
   &:hover {
     color: #efbd04;
   }

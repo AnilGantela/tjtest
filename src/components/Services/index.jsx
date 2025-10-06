@@ -53,9 +53,10 @@ const Services = () => {
 
   const cardData = [
     {
-      backgroundColor: "white",
+      backgroundColor: "linear-gradient(135deg, #f10f7f, #f9d423)",
       title: "Branding and Identity",
-      color: "#7801e7",
+      color: "#fff",
+      textColor: "#262626",
       desc: "Talents Junction stands Robotics for innovation, creativity, and growth in Robotics & IoT. Our identity reflects a fun yet professional space where young minds build the future.",
     },
     {
@@ -87,14 +88,12 @@ const Services = () => {
             data-index={index}
             ref={(el) => (cardRefs.current[index] = el)}
             isVisible={visibleCards.includes(String(index))}
-            backgroundColor={
-              card.backgroundColor
-                ? card.backgroundColor
-                : "rgba(20, 20, 40, 0.75)"
-            }
+            backgroundColor={card.backgroundColor ? card.backgroundColor : null}
           >
             <CardTitle textColor={card.color}>{card.title}</CardTitle>
-            <CardDescription>{card.desc}</CardDescription>
+            <CardDescription textColor={card.textColor && card.textColor}>
+              {card.desc}
+            </CardDescription>
           </Card>
         ))}
       </CardContainer>
