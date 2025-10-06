@@ -4,6 +4,7 @@ import Navbar from "./components/NavBar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import HiringForm from "./pages/HiringForm";
+import ThankYou from "./pages/Thankyou";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -16,6 +17,7 @@ function Layout({ children }) {
     "/payment",
     "/account-deletion",
     "/hiring-form",
+    "/thankyou",
   ];
 
   const shouldHideLayout = hideLayoutRoutes.includes(location.pathname);
@@ -41,6 +43,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/hiring-form" element={<HiringForm />} />
+              <Route path="/thankyou" element={<ThankYou />} />
             </Routes>
           </Layout>
         }
