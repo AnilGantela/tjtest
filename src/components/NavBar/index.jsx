@@ -26,6 +26,7 @@ const NavBar = () => {
         <span />
         <span />
         <span />
+        <span />
       </Hamburger>
 
       {/* Desktop Nav Links */}
@@ -34,13 +35,13 @@ const NavBar = () => {
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/jobs">Jobs</Link>
+          <Link to="/courses">Courses</Link>
+        </li>
+        <li>
+          <Link to="/hiring-form">Career</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>
-        </li>
-        <li>
-          <Link to="/hiring-form">Hiring</Link>
         </li>
       </NavLinks>
 
@@ -53,8 +54,13 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/jobs" onClick={() => setMenuOpen(false)}>
-              Jobs
+            <Link to="/courses" onClick={() => setMenuOpen(false)}>
+              Courses
+            </Link>
+          </li>
+          <li>
+            <Link to="/hiring-form" onClick={() => setMenuOpen(false)}>
+              Career
             </Link>
           </li>
           <li>
