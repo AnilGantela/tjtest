@@ -10,7 +10,6 @@ const Home = () => {
   return (
     <HomeContainer>
       <HomeBanner />
-      <Services />
 
       <div>
         <h1>Welcome to Talents Junction</h1>
@@ -19,6 +18,7 @@ const Home = () => {
 
       <RoboticsWorkshop />
       <WhyChooseUS />
+      <Services />
       <Owners />
     </HomeContainer>
   );

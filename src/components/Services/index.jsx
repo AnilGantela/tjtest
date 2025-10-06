@@ -53,6 +53,7 @@ const Services = () => {
 
   const cardData = [
     {
+      backgroundColor: "white",
       title: "Branding and Identity",
       color: "#7801e7",
       desc: "Talents Junction stands Robotics for innovation, creativity, and growth in Robotics & IoT. Our identity reflects a fun yet professional space where young minds build the future.",
@@ -86,7 +87,11 @@ const Services = () => {
             data-index={index}
             ref={(el) => (cardRefs.current[index] = el)}
             isVisible={visibleCards.includes(String(index))}
-            backgroundColor="rgba(20, 20, 40, 0.75)"
+            backgroundColor={
+              card.backgroundColor
+                ? card.backgroundColor
+                : "rgba(20, 20, 40, 0.75)"
+            }
           >
             <CardTitle textColor={card.color}>{card.title}</CardTitle>
             <CardDescription>{card.desc}</CardDescription>
