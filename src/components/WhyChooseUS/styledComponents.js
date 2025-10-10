@@ -23,7 +23,7 @@ export const WhyChooseUsContainer = styled.section`
   transition: opacity 0.6s ease, transform 0.6s ease;
 
   ${(props) =>
-    props.containerVisible &&
+    props.containervisible &&
     css`
       opacity: 1;
       transform: translateY(0);
@@ -66,7 +66,7 @@ export const CardContainer = styled.div`
 `;
 
 export const Card = styled.div`
-  background: ${(props) => props.backgroundColor || "rgba(20, 20, 40, 0.85)"};
+  background: ${(props) => props.backgroundcolor || "rgba(20, 20, 40, 0.85)"};
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -86,7 +86,7 @@ export const Card = styled.div`
   /* Mobile only: animate each card */
   @media (max-width: 426px) {
     ${(props) =>
-      props.isVisible &&
+      props.isvisible &&
       css`
         animation: ${fadeSlideUp} 0.8s ease-out forwards;
       `}
@@ -101,7 +101,7 @@ export const Card = styled.div`
 
 export const CardTitle = styled.h4`
   font-size: 1.4rem;
-  color: ${(props) => props.textColor || "#fff"};
+  color: ${(props) => props.textcolor || "#fff"};
   margin-bottom: 12px;
 `;
 

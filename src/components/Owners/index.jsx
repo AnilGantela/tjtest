@@ -9,8 +9,10 @@ import {
   PhotosSection,
   CarouselTrack,
   CarouselItem,
+  NormalTrack,
+  NormalItem,
 } from "./styledComponents";
-const images = ["/founder1.jpg", "/founder2.jpg", "/founder3.jpg"];
+const images = ["/founder1.jpg", "/founder2.jpg"];
 
 const Owners = () => {
   const sectionRef = useRef();
@@ -53,13 +55,23 @@ const Owners = () => {
         </Description1>
       </TextSection>
       <PhotosSection>
-        <CarouselTrack>
-          {duplicatedImages.map((src, idx) => (
-            <CarouselItem key={idx}>
-              <img src={src} alt={`Founder ${idx + 1}`} />
-            </CarouselItem>
-          ))}
-        </CarouselTrack>
+        {images.length >= 4 ? (
+          <CarouselTrack>
+            {duplicatedImages.map((src, idx) => (
+              <CarouselItem key={idx}>
+                <img src={src} alt={`Founder ${idx + 1}`} />
+              </CarouselItem>
+            ))}
+          </CarouselTrack>
+        ) : (
+          <NormalTrack>
+            {images.map((src, idx) => (
+              <NormalItem key={idx}>
+                <img src={src} alt={`Founder ${idx + 1}`} />
+              </NormalItem>
+            ))}
+          </NormalTrack>
+        )}
       </PhotosSection>
       <Description2>
         Our team's synergy is the key to bringing your ideas to life.

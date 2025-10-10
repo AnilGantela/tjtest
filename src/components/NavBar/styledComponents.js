@@ -32,6 +32,9 @@ export const NavBarContainer = styled.div`
     rgba(255, 255, 255, 0.1),
     rgba(0, 0, 0, 0.8)
   );
+  @media print {
+    display: none;
+  }
 `;
 
 export const NavLinks = styled.ul`
@@ -63,7 +66,7 @@ export const NavLogoImg = styled.img`
   width: auto;
   background: transparent;
   margin-left: 2vh;
-
+  cursor: pointer;
   @media (max-width: 425px) {
     height: 10vh;
   }

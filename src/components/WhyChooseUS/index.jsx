@@ -77,7 +77,7 @@ const WhyChooseUs = () => {
   return (
     <WhyChooseUsContainer
       ref={containerRef}
-      containerVisible={containerVisible}
+      containervisible={containerVisible}
     >
       <TextContainer>
         <SecondaryTitle>Why Choose</SecondaryTitle>
@@ -90,10 +90,10 @@ const WhyChooseUs = () => {
             key={index}
             data-index={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            isVisible={visibleCards.includes(String(index))}
-            backgroundColor="rgba(20, 20, 40, 0.75)"
+            isvisible={visibleCards.includes(String(index))}
+            backgroundcolor="rgba(20, 20, 40, 0.75)"
           >
-            <CardTitle textColor={card.color}>{card.title}</CardTitle>
+            <CardTitle textcolor={card.color}>{card.title}</CardTitle>
             <CardDescription>{card.desc}</CardDescription>
           </Card>
         ))}

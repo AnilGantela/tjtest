@@ -74,7 +74,7 @@ const Services = () => {
   return (
     <WhyChooseUsContainer
       ref={containerRef}
-      containerVisible={containerVisible}
+      containervisible={containerVisible}
     >
       <TextContainer>
         <SecondaryTitle>Our</SecondaryTitle>
@@ -87,11 +87,11 @@ const Services = () => {
             key={index}
             data-index={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            isVisible={visibleCards.includes(String(index))}
-            backgroundColor={card.backgroundColor ? card.backgroundColor : null}
+            isvisible={visibleCards.includes(String(index))}
+            backgroundcolor={card.backgroundColor ? card.backgroundColor : null}
           >
-            <CardTitle textColor={card.color}>{card.title}</CardTitle>
-            <CardDescription textColor={card.textColor && card.textColor}>
+            <CardTitle textcolor={card.color}>{card.title}</CardTitle>
+            <CardDescription textcolor={card.textColor && card.textColor}>
               {card.desc}
             </CardDescription>
           </Card>

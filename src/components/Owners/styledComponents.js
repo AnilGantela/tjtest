@@ -132,6 +132,36 @@ export const CarouselTrack = styled.div`
   }
 `;
 
+export const NormalTrack = styled.div`
+  display: flex;
+  width: max-content;
+  self-align: center;
+  @media (max-width: 426px) {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+`;
+
+export const NormalItem = styled.div`
+  flex-shrink: 0;
+  margin-right: 20px;
+
+  img {
+    width: 18vw;
+    height: 38vh;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  @media (max-width: 426px) {
+    margin-right: 15px;
+    img {
+      width: 20vw;
+      height: 20vh;
+    }
+  }
+`;
+
 export const CarouselItem = styled.div`
   flex-shrink: 0;
   margin-right: 20px;

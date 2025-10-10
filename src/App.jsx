@@ -5,6 +5,8 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import HiringForm from "./pages/HiringForm";
 import ThankYou from "./pages/Thankyou";
+import RoboticsProgram from "./pages/Robotics";
+import IotProgram from "./pages/Iot";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -44,6 +46,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/hiring-form" element={<HiringForm />} />
               <Route path="/thankyou" element={<ThankYou />} />
+              <Route path="/courses/robotics" element={<RoboticsProgram />} />
+              <Route path="/courses/iot" element={<IotProgram />} />
             </Routes>
           </Layout>
         }
