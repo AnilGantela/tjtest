@@ -7,23 +7,30 @@ import WhyChooseUS from "../../components/WhyChooseUS";
 import Highlights from "../../components/Highlights";
 import Services from "../../components/Services";
 import Courses from "../../components/Courses";
+import Workshop from "../../components/Workshop";
 
-const Home = ({ scrollToCourses }) => {
-  const coursesRef = useRef(null);
+import { useLocation } from "react-router-dom";
 
-  // Scroll if requested
+function Home() {
+  const location = useLocation();
+
+  // Smooth scroll after navigation
   useEffect(() => {
-    if (scrollToCourses && coursesRef.current) {
-      coursesRef.current.scrollIntoView({ behavior: "smooth" });
+    if (location.state?.scrollTo) {
+      const section = document.getElementById(location.state.scrollTo);
+      if (section) section.scrollIntoView({ behavior: "smooth" });
     }
-  }, [scrollToCourses]);
+  }, [location.state]);
 
   return (
     <HomeContainer>
       <HomeBanner />
-      <div ref={coursesRef}>
+      <section id="courses">
         <Courses />
-      </div>
+      </section>
+      <section id="workshop">
+        <Workshop />
+      </section>
       <Highlights />
       <WhyChooseUS />
       <Services />
@@ -31,6 +38,6 @@ const Home = ({ scrollToCourses }) => {
       <Owners />
     </HomeContainer>
   );
-};
+}
 
 export default Home;

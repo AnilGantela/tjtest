@@ -67,13 +67,14 @@ export const CourseCard = styled.div`
   padding: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 45%;
-  cursor: pointer;
-  background: ${(props) => props.backgroundcolor || "rgba(20, 20, 40, 0.85)"};
+
+  background: transparent;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  border-right: ${(props) =>
+    props.borderyes ? "2px solid rgba(255, 255, 255, 0.1)" : "none"};
 
   &:hover {
     transform: translateY(-5px);
@@ -93,6 +94,7 @@ export const CourseCard = styled.div`
 
   @media (max-width: 426px) {
     width: 90%;
+    border-right: none;
     padding: 0.5rem;
     ${(props) =>
       props.isvisible &&
@@ -176,4 +178,14 @@ export const CardPara = styled.p`
   @media (max-width: 426px) {
     font-size: 0.75rem;
   }
+`;
+
+export const ProjectsItem = styled.li`
+  background: ${(props) => props.backgroundcolor || "rgba(20, 20, 40, 0.85)"};
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+  width: 100%;
+  margin-bottom: 2rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive font size */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 `;

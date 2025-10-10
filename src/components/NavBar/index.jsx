@@ -1,6 +1,5 @@
-// NavBar.tsx
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import {
   NavBarContainer,
   NavLinks,
@@ -11,31 +10,56 @@ import {
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigator = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleScrollClick = (e, sectionId) => {
+    e.preventDefault();
+
+    if (location.pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      navigate("/", { state: { scrollTo: sectionId } });
+    }
+
+    setMenuOpen(false);
+  };
 
   return (
     <NavBarContainer>
+      {/* Logo */}
       <NavLogoImg
-        onClick={() => navigator("/")}
+        onClick={() => navigate("/")}
         src="/nav-logo1.svg"
         alt="Logo"
       />
 
-      {/* Hamburger for small devices */}
+      {/* Hamburger for mobile */}
       <Hamburger onClick={() => setMenuOpen(!menuOpen)}>
-        <span />
         <span />
         <span />
         <span />
       </Hamburger>
 
-      {/* Desktop Nav Links */}
+      {/* Desktop Menu */}
       <NavLinks>
         <li>
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/courses">Courses</Link>
+          <a href="#courses" onClick={(e) => handleScrollClick(e, "courses")}>
+            Courses
+          </a>
+        </li>
+        <li>
+          <a href="#workshop" onClick={(e) => handleScrollClick(e, "workshop")}>
+            Workshop
+          </a>
         </li>
         <li>
           <Link to="/hiring-form">Career</Link>
@@ -45,7 +69,7 @@ const NavBar = () => {
         </li>
       </NavLinks>
 
-      {/* Mobile Menu (visible when hamburger clicked) */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <MobileMenu>
           <li>
@@ -54,17 +78,17 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <li>
-              <button
-                onClick={() => {
-                  // Navigate to home and pass state
-                  navigate("/", { state: { scrollToCourses: true } });
-                  setMenuOpen(false);
-                }}
-              >
-                Courses
-              </button>
-            </li>
+            <a href="#courses" onClick={(e) => handleScrollClick(e, "courses")}>
+              Courses
+            </a>
+          </li>
+          <li>
+            <a
+              href="#workshop"
+              onClick={(e) => handleScrollClick(e, "workshop")}
+            >
+              Workshop
+            </a>
           </li>
           <li>
             <Link to="/hiring-form" onClick={() => setMenuOpen(false)}>

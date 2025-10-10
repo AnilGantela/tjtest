@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Navbar from "./components/NavBar";
 import Home from "./pages/Home";
@@ -7,6 +7,8 @@ import HiringForm from "./pages/HiringForm";
 import ThankYou from "./pages/Thankyou";
 import RoboticsProgram from "./pages/Robotics";
 import IotProgram from "./pages/Iot";
+import NotFound from "./pages/NotFound";
+import WorkInProgress from "./pages/WorkInProgress";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -36,6 +38,14 @@ function Layout({ children }) {
 }
 
 function App() {
+  const wipPaths = [
+    "/workshops/bluetooth-driving-car",
+    "/workshops/self-driving-car",
+    "/workshops/home-automation",
+    "/workshops/obstacle-detection",
+    "/workshops/smoke-detection",
+    "/workshops/bluetooth-control",
+  ];
   return (
     <Routes>
       <Route
@@ -51,10 +61,17 @@ function App() {
                   />
                 }
               />
-              <Route path="/hiring-form" element={<HiringForm />} />
+              <Route exact path="/hiring-form" element={<HiringForm />} />
               <Route path="/thankyou" element={<ThankYou />} />
               <Route path="/courses/robotics" element={<RoboticsProgram />} />
               <Route path="/courses/iot" element={<IotProgram />} />
+              {wipPaths.map((path) => (
+                <Route key={path} path={path} element={<WorkInProgress />} />
+              ))}
+              <Route path="/not-found" element={<NotFound />} />
+
+              {/* Redirect all unmatched paths to /not-found */}
+              <Route path="*" element={<Navigate to="/not-found" replace />} />
             </Routes>
           </Layout>
         }

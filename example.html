@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IoT Workshop | Talents Junction</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #faf8f4;
+        color: #222;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 15px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 1.2rem;
+      }
+
+      .logo img {
+        width: 60px;
+        height: auto;
+      }
+
+      .tagline {
+        font-style: italic;
+        color: #333;
+        margin: 10px 0 30px;
+        text-align: center;
+      }
+
+      h2 {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        color: #111;
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #111;
+        margin-bottom: 35px;
+        text-align: center;
+      }
+
+      .topics {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 40px;
+      }
+
+      .topic {
+        background-color: #f5e9da;
+        border-radius: 40px;
+        padding: 18px 25px;
+        font-weight: 500;
+        color: #222;
+        text-align: center;
+        font-size: 1rem;
+        transition: transform 0.2s ease;
+      }
+
+      .topic:nth-child(2) {
+        background-color: #fddbb4;
+      }
+
+      .topic:nth-child(3) {
+        background-color: #d7e5e4;
+      }
+
+      .topic:nth-child(4) {
+        background-color: #b7c4c4;
+      }
+
+      .topic:hover {
+        transform: translateY(-3px);
+      }
+
+      .footer-text {
+        text-align: center;
+        margin-top: 10px;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 2rem;
+        }
+        .topic {
+          font-size: 0.95rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Logo + Tagline -->
+    <div class="logo">
+      <img
+        src="Minimalist MR Typographic Logo (1).svg"
+        alt="Talents Junction Logo"
+      />
+      <span>TALENTS JUNCTION</span>
+    </div>
+    <p class="tagline">“CONNECTING TALENT WITH TOMORROW.”</p>
+
+    <!-- Heading -->
+    <h2>we invite you to</h2>
+    <h1>IOT WORKSHOP</h1>
+
+    <!-- Topics -->
+    <div class="topics">
+      <div class="topic">HOME AUTOMATION</div>
+      <div class="topic">OBSTACLE DETECTION</div>
+      <div class="topic">SMOKE DETECTION</div>
+      <div class="topic">BLUETOOTH CONTROL FOR HOME</div>
+    </div>
+
+    <p class="footer-text">
+      These projects we will work on in the IoT Workshop
+    </p>
+  </body>
+</html>
