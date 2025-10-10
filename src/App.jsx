@@ -43,7 +43,14 @@ function App() {
         element={
           <Layout>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={
+                  <Home
+                    scrollToCourses={useLocation().state?.scrollToCourses}
+                  />
+                }
+              />
               <Route path="/hiring-form" element={<HiringForm />} />
               <Route path="/thankyou" element={<ThankYou />} />
               <Route path="/courses/robotics" element={<RoboticsProgram />} />

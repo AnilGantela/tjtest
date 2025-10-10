@@ -54,9 +54,17 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/courses" onClick={() => setMenuOpen(false)}>
-              Courses
-            </Link>
+            <li>
+              <button
+                onClick={() => {
+                  // Navigate to home and pass state
+                  navigate("/", { state: { scrollToCourses: true } });
+                  setMenuOpen(false);
+                }}
+              >
+                Courses
+              </button>
+            </li>
           </li>
           <li>
             <Link to="/hiring-form" onClick={() => setMenuOpen(false)}>
