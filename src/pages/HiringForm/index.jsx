@@ -73,7 +73,6 @@ const HiringForm = () => {
         <Label htmlFor="role">Select Role</Label>
         <Select id="role" name="Role Applied" required>
           <option value="">-- Choose a role --</option>
-          <option>HR Executive</option>
           <option>AI Prompt & Tool Specialist</option>
           <option>IoT Engineer</option>
           <option>Web Developer</option>
