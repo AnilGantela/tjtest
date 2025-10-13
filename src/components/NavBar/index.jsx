@@ -49,7 +49,9 @@ const NavBar = () => {
       {/* Desktop Menu */}
       <NavLinks>
         <li>
-          <Link to="/about">About</Link>
+          <a href="#about" onClick={(e) => handleScrollClick(e, "about")}>
+            About
+          </a>
         </li>
         <li>
           <a href="#courses" onClick={(e) => handleScrollClick(e, "courses")}>

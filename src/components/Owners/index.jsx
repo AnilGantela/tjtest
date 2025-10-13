@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   OwnersSection,
   TextSection,
@@ -15,6 +16,7 @@ import {
 const images = ["/founder1.jpg", "/founder2.jpg"];
 
 const Owners = () => {
+  const navigate = useNavigate();
   const sectionRef = useRef();
   const [isVisible, setIsVisible] = useState(false);
 

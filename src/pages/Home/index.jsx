@@ -42,7 +42,9 @@ function Home() {
         <Highlights />
         <WhyChooseUS />
         <Services />
-        <Owners />
+        <section id="about">
+          <Owners />
+        </section>
       </HomeContainer>
     </>
   );
