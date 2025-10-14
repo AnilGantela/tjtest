@@ -65,7 +65,7 @@ const Services = () => {
       desc: "Robotics is the science of designing and building machines that can think, move, and work like humans.",
     },
     {
-      title: "Iot",
+      title: "IoT",
       color: "#f10f7f",
       desc: "IoT (Internet of Things) connects everyday devices to the internet, making them smart and able to communicate",
     },

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet"; // <-- import Helmet
 import {
   Container,
   Header,
@@ -42,55 +43,55 @@ const programData = [
       },
       {
         week: 2,
-        classNum: 1,
+        classNum: 4,
         name: "Exploring the Breadboard",
         desc: "Understand breadboard connections, series and parallel circuits, and practical circuit assembly.",
       },
       {
         week: 2,
-        classNum: 2,
+        classNum: 5,
         name: "Light Detection using LDR Sensor",
         desc: "Create a light-sensing system using an LDR to detect brightness or darkness.",
       },
       {
         week: 2,
-        classNum: 3,
+        classNum: 6,
         name: "Temperature Sensing using LM35/DHT11",
         desc: "Measure and display temperature data using LM35 or DHT11 sensors.",
       },
       {
         week: 3,
-        classNum: 1,
+        classNum: 7,
         name: "Working with Buzzer and DC Motor",
         desc: "Learn to control sound and motion using buzzers and DC motors with Arduino.",
       },
       {
         week: 3,
-        classNum: 2,
+        classNum: 8,
         name: "Temperature Controlled Fan System",
         desc: "Build a fan that turns ON/OFF automatically based on temperature readings.",
       },
       {
         week: 3,
-        classNum: 3,
+        classNum: 9,
         name: "Controlling Servo Motor with Potentiometer",
         desc: "Control the position of a servo motor by rotating a potentiometer knob.",
       },
       {
         week: 4,
-        classNum: 1,
+        classNum: 10,
         name: "Automatic Street Light System",
         desc: "Automate street lights that turn ON at night and OFF during the day using an LDR sensor.",
       },
       {
         week: 4,
-        classNum: 2,
+        classNum: 11,
         name: "Fire Detection Alarm using Flame Sensor",
         desc: "Create a fire alert system that triggers an alarm when flames are detected.",
       },
       {
         week: 4,
-        classNum: 3,
+        classNum: 12,
         name: "Obstacle Detection using IR Sensor",
         desc: "Detect nearby objects using infrared sensors for automation or robotic systems.",
       },
@@ -105,73 +106,73 @@ const programData = [
     weeks: [
       {
         week: 5,
-        classNum: 1,
+        classNum: 13,
         name: "Understanding Digital & Analog Sensors",
         desc: "Learn how different sensors send data to Arduino and how to process input signals.",
       },
       {
         week: 5,
-        classNum: 2,
+        classNum: 14,
         name: "Soil Moisture Sensor-based Plant Watering",
         desc: "Build a smart irrigation system that waters plants automatically when the soil is dry.",
       },
       {
         week: 5,
-        classNum: 3,
+        classNum: 15,
         name: "Rain Detection System",
         desc: "Design a system that senses rain and sends alerts or activates safety mechanisms.",
       },
       {
         week: 6,
-        classNum: 1,
+        classNum: 16,
         name: "Ultrasonic Distance Measurement",
         desc: "Measure object distance accurately using ultrasonic sound waves.",
       },
       {
         week: 6,
-        classNum: 2,
+        classNum: 17,
         name: "Automatic Parking System using Ultrasonic Sensor",
         desc: "Simulate an automatic parking assist system that warns about nearby obstacles.",
       },
       {
         week: 6,
-        classNum: 3,
+        classNum: 18,
         name: "Smart Dustbin using Ultrasonic Sensor & Servo",
         desc: "Create a touchless dustbin that opens automatically when someone approaches.",
       },
       {
         week: 7,
-        classNum: 1,
+        classNum: 19,
         name: "Gas Leakage Detection System (MQ-2)",
         desc: "Detect gas or smoke leaks using an MQ-2 sensor and trigger a safety alarm.",
       },
       {
         week: 7,
-        classNum: 2,
+        classNum: 20,
         name: "Smart Home Safety Alarm",
         desc: "Integrate multiple sensors to build a smart alarm system for home safety.",
       },
       {
         week: 7,
-        classNum: 3,
+        classNum: 21,
         name: "Water Level Monitoring System",
         desc: "Measure and display water levels in a tank to prevent overflow or shortage.",
       },
       {
         week: 8,
-        classNum: 1,
+        classNum: 22,
         name: "Motion Detection using PIR Sensor",
         desc: "Detect motion in a room for security or energy-saving applications.",
       },
       {
         week: 8,
-        classNum: 2,
+        classNum: 23,
         name: "Security Light Automation System",
         desc: "Automatically switch lights ON when motion is detected and OFF when idle.",
       },
       {
         week: 8,
-        classNum: 3,
+        classNum: 24,
         name: "Mini Project: Multi-Sensor Smart Room Setup",
         desc: "Combine multiple sensors to build a smart, automated room environment.",
       },
@@ -186,73 +187,73 @@ const programData = [
     weeks: [
       {
         week: 9,
-        classNum: 1,
+        classNum: 25,
         name: "Introduction to Bluetooth Module (HC-05)",
         desc: "Understand how Bluetooth modules work and connect Arduino with HC-05 for wireless control.",
       },
       {
         week: 9,
-        classNum: 2,
+        classNum: 26,
         name: "Pairing & Sending Commands from Mobile",
         desc: "Pair your smartphone and send commands to Arduino using Bluetooth apps.",
       },
       {
         week: 9,
-        classNum: 3,
+        classNum: 27,
         name: "Bluetooth LED Control",
         desc: "Control LED lights from your phone using Bluetooth signals.",
       },
       {
         week: 10,
-        classNum: 1,
+        classNum: 28,
         name: "Bluetooth Controlled Fan/Appliance",
         desc: "Build a system to turn home appliances ON/OFF via mobile control.",
       },
       {
         week: 10,
-        classNum: 2,
+        classNum: 29,
         name: "Bluetooth Controlled Car/Robot",
         desc: "Design a Bluetooth-based robot that moves through directional commands.",
       },
       {
         week: 10,
-        classNum: 3,
+        classNum: 30,
         name: "Voice Controlled Robot using Bluetooth",
         desc: "Upgrade your robot to respond to voice commands using a voice-control app.",
       },
       {
         week: 11,
-        classNum: 1,
+        classNum: 31,
         name: "IoT Data Display using LCD/OLED",
         desc: "Display live sensor readings or system status on LCD/OLED screens.",
       },
       {
         week: 11,
-        classNum: 2,
+        classNum: 32,
         name: "IoT Smart Home Dashboard (Local Control)",
         desc: "Build a small control dashboard to manage smart home devices locally.",
       },
       {
         week: 11,
-        classNum: 3,
+        classNum: 33,
         name: "Bluetooth Home Automation System",
         desc: "Integrate multiple devices into one system for full Bluetooth-based automation.",
       },
       {
         week: 12,
-        classNum: 1,
+        classNum: 34,
         name: "Final Project Planning & Team Formation",
         desc: "Form teams, select project topics, and plan system design with guidance.",
       },
       {
         week: 12,
-        classNum: 2,
+        classNum: 35,
         name: "Final Project Development",
         desc: "Build, test, and troubleshoot your final IoT project.",
       },
       {
         week: 12,
-        classNum: 3,
+        classNum: 36,
         name: "Presentation & Demonstration Day",
         desc: "Showcase your completed projects and demonstrate them live.",
       },
@@ -264,63 +265,72 @@ const programData = [
 
 const IotProgram = () => {
   return (
-    <Container>
-      <Header className="no-print">
-        <HeaderLeft>
-          <h1>⚙ IoT Course Outline — 3-Month Plan</h1>
-          <Meta>
-            Schedule: 3 Classes per Week (≈36 Sessions) • Goal:Comprehensive
-            instructor-led curriculum with weekly projects and final showcase
-          </Meta>
-        </HeaderLeft>
-        <HeaderRight>
-          <Badge>Duration: 3 Months • 12 Weeks • 36 Sessions</Badge>
-          <Controls>
-            <button onClick={() => window.print()}>Print / Save PDF</button>
-          </Controls>
-        </HeaderRight>
-      </Header>
+    <>
+      <Helmet>
+        <title>IoT Course Outline - Talents Junction</title>
+        <meta
+          name="description"
+          content="Explore our comprehensive 3-month IoT course outline, featuring hands-on projects, sensor integration, and Bluetooth communication. Perfect for young innovators eager to dive into the world of Internet of Things."
+        />
+      </Helmet>
+      <Container>
+        <Header className="no-print">
+          <HeaderLeft>
+            <h1>⚙ IoT Course Outline — 3-Month Plan</h1>
+            <Meta>
+              Schedule: 3 Classes per Week (≈36 Sessions) • Goal:Comprehensive
+              instructor-led curriculum with weekly projects and final showcase
+            </Meta>
+          </HeaderLeft>
+          <HeaderRight>
+            <Badge>Duration: 3 Months • 12 Weeks • 36 Sessions</Badge>
+            <Controls>
+              <button onClick={() => window.print()}>Print / Save PDF</button>
+            </Controls>
+          </HeaderRight>
+        </Header>
 
-      {programData.map((month) => (
-        <Card key={month.month}>
-          <MonthTitle>
-            <Pill>{month.month}</Pill>
-            <strong>{month.title}</strong>
-          </MonthTitle>
-          <Goal>{month.goal}</Goal>
+        {programData.map((month) => (
+          <Card key={month.month}>
+            <MonthTitle>
+              <Pill>{month.month}</Pill>
+              <strong>{month.title}</strong>
+            </MonthTitle>
+            <Goal>{month.goal}</Goal>
 
-          <Table>
-            <thead>
-              <tr>
-                <th>Week</th>
-                <th>Class</th>
-                <th>Session / Project Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {month.weeks.map((wk, idx) => (
-                <tr key={idx}>
-                  <td>{wk.week}</td>
-                  <td>{wk.classNum}</td>
-                  <td>{wk.name}</td>
-                  <td className="desc">{wk.desc}</td>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Week</th>
+                  <th>Class</th>
+                  <th>Session / Project Name</th>
+                  <th>Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
+              </thead>
+              <tbody>
+                {month.weeks.map((wk, idx) => (
+                  <tr key={idx}>
+                    <td>{wk.week}</td>
+                    <td>{wk.classNum}</td>
+                    <td>{wk.name}</td>
+                    <td className="desc">{wk.desc}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
 
-          <Summary>
-            <strong>Week Summary:</strong> {month.summary}
-          </Summary>
-        </Card>
-      ))}
+            <Summary>
+              <strong>Week Summary:</strong> {month.summary}
+            </Summary>
+          </Card>
+        ))}
 
-      <Footer>
-        Designed for instructors and students • Adjust pacing & complexity to
-        suit participant level
-      </Footer>
-    </Container>
+        <Footer>
+          Designed for instructors and students • Adjust pacing & complexity to
+          suit participant level
+        </Footer>
+      </Container>
+    </>
   );
 };
 

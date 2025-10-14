@@ -19,7 +19,7 @@ const slideInfinite = keyframes`
 `;
 
 export const OwnersSection = styled.div`
-  width: 85%;
+  width: 95%;
   margin: 90px auto;
   overflow: hidden;
   box-sizing: border-box;
@@ -134,8 +134,12 @@ export const CarouselTrack = styled.div`
 
 export const NormalTrack = styled.div`
   display: flex;
-  width: max-content;
+  width: 100%;
+  margin-left: auto;
   self-align: center;
+  justify-content: center;
+
+  gap: 20px;
   @media (max-width: 426px) {
     flex-wrap: wrap;
     gap: 15px;
@@ -147,7 +151,7 @@ export const NormalItem = styled.div`
   margin-right: 20px;
 
   img {
-    width: 18vw;
+    width: 15vw;
     height: 38vh;
     object-fit: cover;
     border-radius: 12px;

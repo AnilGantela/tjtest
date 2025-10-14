@@ -13,7 +13,7 @@ import {
   NormalTrack,
   NormalItem,
 } from "./styledComponents";
-const images = ["/founder1.jpg", "/founder2.jpg"];
+const images = ["/founder2.jpg", "/founder1.jpg"];
 
 const Owners = () => {
   const navigate = useNavigate();

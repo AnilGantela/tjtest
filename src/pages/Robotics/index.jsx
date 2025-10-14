@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet"; // <-- import Helmet
 import {
   Container,
   Header,
@@ -42,55 +43,55 @@ const programData = [
       },
       {
         week: 2,
-        classNum: 1,
+        classNum: 4,
         name: "Forward & Reverse Motion Coding",
         desc: "Learn how to move the robot forward and backward using motor driver logic.",
       },
       {
         week: 2,
-        classNum: 2,
+        classNum: 5,
         name: "Turning Logic (Left, Right, Stop)",
         desc: "Code and test how the robot turns and stops using digital pin control.",
       },
       {
         week: 2,
-        classNum: 3,
+        classNum: 6,
         name: "Obstacle Simulation Practice",
         desc: "Practice maneuvering your robot manually around small obstacles or cones.",
       },
       {
         week: 3,
-        classNum: 1,
+        classNum: 7,
         name: "Understanding PWM and Speed Control",
         desc: "Learn to vary motor speed using analogWrite() and PWM concepts.",
       },
       {
         week: 3,
-        classNum: 2,
+        classNum: 8,
         name: "Variable Speed Car Project",
         desc: "Control robot speed using a potentiometer input.",
       },
       {
         week: 3,
-        classNum: 3,
+        classNum: 9,
         name: "Mini Project – Basic Car Challenge",
         desc: "Test your robot’s speed, stability, and direction in a short track challenge.",
       },
       {
         week: 4,
-        classNum: 1,
+        classNum: 10,
         name: "Introduction to Sensors in Robotics",
         desc: "Learn about IR, ultrasonic, and line sensors and their uses in robots.",
       },
       {
         week: 4,
-        classNum: 2,
+        classNum: 11,
         name: "IR Sensor Integration",
         desc: "Use an IR sensor to detect obstacles and stop the robot automatically.",
       },
       {
         week: 4,
-        classNum: 3,
+        classNum: 12,
         name: "Project: Obstacle Detection Robot",
         desc: "Combine motion control and IR sensing to make a reactive obstacle robot.",
       },
@@ -105,73 +106,73 @@ const programData = [
     weeks: [
       {
         week: 5,
-        classNum: 1,
+        classNum: 13,
         name: "Bluetooth Module (HC-05) Introduction",
         desc: "Learn how Bluetooth works and connect it with Arduino for serial communication.",
       },
       {
         week: 5,
-        classNum: 2,
+        classNum: 14,
         name: "Bluetooth Command Coding",
         desc: "Write Arduino code to receive and respond to Bluetooth commands from a phone.",
       },
       {
         week: 5,
-        classNum: 3,
+        classNum: 15,
         name: "Bluetooth Controlled Robot Car",
         desc: "Build a robot that can move in all directions via a mobile app.",
       },
       {
         week: 6,
-        classNum: 1,
+        classNum: 16,
         name: "Voice Controlled Robot (via App)",
         desc: "Use voice commands to control robot motion through mobile speech recognition.",
       },
       {
         week: 6,
-        classNum: 2,
+        classNum: 17,
         name: "Project – Voice Controlled Vehicle",
         desc: "Implement and test your own voice-controlled robot.",
       },
       {
         week: 6,
-        classNum: 3,
+        classNum: 18,
         name: "Debug & Race Session",
         desc: "Troubleshoot direction issues and participate in a short “voice race.”",
       },
       {
         week: 7,
-        classNum: 1,
+        classNum: 19,
         name: "Ultrasonic Sensor Integration",
         desc: "Learn how ultrasonic sensors measure distance and avoid collisions.",
       },
       {
         week: 7,
-        classNum: 2,
+        classNum: 20,
         name: "Obstacle Avoidance Robot",
         desc: "Build a robot that detects obstacles and automatically changes direction.",
       },
       {
         week: 7,
-        classNum: 3,
+        classNum: 21,
         name: "Challenge: Avoid & Navigate Track",
         desc: "Compete in obstacle courses using your autonomous robot.",
       },
       {
         week: 8,
-        classNum: 1,
+        classNum: 22,
         name: "Gyroscope (MPU6050) Introduction",
         desc: "Understand how gyroscopes detect angle, tilt, and balance in robots.",
       },
       {
         week: 8,
-        classNum: 2,
+        classNum: 23,
         name: "Gyroscope Controlled Robot",
         desc: "Control robot motion using hand or tilt gestures.",
       },
       {
         week: 8,
-        classNum: 3,
+        classNum: 24,
         name: "Project: Gesture Controlled Robot",
         desc: "Build a full robot that responds to tilt-based controls.",
       },
@@ -186,73 +187,73 @@ const programData = [
     weeks: [
       {
         week: 9,
-        classNum: 1,
+        classNum: 25,
         name: "Introduction to Line Following Logic",
         desc: "Learn the concept of line tracking using IR sensor arrays.",
       },
       {
         week: 9,
-        classNum: 2,
+        classNum: 26,
         name: "Building a Line Follower Robot",
         desc: "Assemble and code a robot to follow black or white lines automatically.",
       },
       {
         week: 9,
-        classNum: 3,
+        classNum: 27,
         name: "Testing & Adjusting Line Follower",
         desc: "Tune sensor positions and delays for smooth path following.",
       },
       {
         week: 10,
-        classNum: 1,
+        classNum: 28,
         name: "Maze Solving Algorithms (Left-Hand Rule)",
         desc: "Learn logic-based decision-making for maze-solving robots.",
       },
       {
         week: 10,
-        classNum: 2,
+        classNum: 29,
         name: "Maze Solver Robot Build",
         desc: "Program the robot to navigate mazes using multiple IR sensors.",
       },
       {
         week: 10,
-        classNum: 3,
+        classNum: 30,
         name: "Maze Solver Testing & Optimization",
         desc: "Test the robot in real mazes and fine-tune turning logic.",
       },
       {
         week: 11,
-        classNum: 1,
+        classNum: 31,
         name: "Integrating Multiple Sensors",
         desc: "Combine IR, ultrasonic, and Bluetooth for multi-functional robots.",
       },
       {
         week: 11,
-        classNum: 2,
+        classNum: 32,
         name: "IoT Smart Robot Concept",
         desc: "Learn how to send sensor data (distance, motion) to other devices.",
       },
       {
         week: 11,
-        classNum: 3,
+        classNum: 33,
         name: "Final Robot Integration Build",
         desc: "Create a robot that includes control, automation, and communication.",
       },
       {
         week: 12,
-        classNum: 1,
+        classNum: 34,
         name: "Final Project Planning",
         desc: "Choose project type (Line Follower / Maze Solver / IoT Robot) and form teams.",
       },
       {
         week: 12,
-        classNum: 2,
+        classNum: 35,
         name: "Final Project Construction & Debugging",
         desc: "Assemble, program, and refine final robot designs.",
       },
       {
         week: 12,
-        classNum: 3,
+        classNum: 36,
         name: "Showcase & Competition Day",
         desc: "Present and demonstrate projects in a fun competition.",
       },
@@ -264,63 +265,76 @@ const programData = [
 
 const RoboticsProgram = () => {
   return (
-    <Container>
-      <Header className="no-print">
-        <HeaderLeft>
-          <h1>🤖 3-Month Robotics Training Program</h1>
-          <Meta>
-            Schedule: 3 Classes per Week (≈36 Sessions) • Goal: Build robots
-            from wired models to autonomous systems
-          </Meta>
-        </HeaderLeft>
-        <HeaderRight>
-          <Badge>Duration: 3 Months • 12 Weeks • 36 Sessions</Badge>
-          <Controls>
-            <button onClick={() => window.print()}>Print / Save PDF</button>
-          </Controls>
-        </HeaderRight>
-      </Header>
+    <>
+      <Helmet>
+        <title>Robotics Course OutLine | Talents Junction</title>
+        <meta
+          name="description"
+          content="Join our comprehensive 3-month Robotics Training Program at Talents Junction. Learn to build and program robots from scratch, mastering motor control, sensors, Bluetooth communication, and autonomous navigation. Perfect for beginners and enthusiasts looking to dive into the world of robotics."
+        />
+        <link
+          rel="canonical"
+          href="https://www.talentsjunction.com/courses/robotics"
+        />
+      </Helmet>
+      <Container>
+        <Header className="no-print">
+          <HeaderLeft>
+            <h1>🤖 3-Month Robotics Training Program</h1>
+            <Meta>
+              Schedule: 3 Classes per Week (≈36 Sessions) • Goal: Build robots
+              from wired models to autonomous systems
+            </Meta>
+          </HeaderLeft>
+          <HeaderRight>
+            <Badge>Duration: 3 Months • 12 Weeks • 36 Sessions</Badge>
+            <Controls>
+              <button onClick={() => window.print()}>Print / Save PDF</button>
+            </Controls>
+          </HeaderRight>
+        </Header>
 
-      {programData.map((month) => (
-        <Card key={month.month}>
-          <MonthTitle>
-            <Pill>{month.month}</Pill>
-            <strong>{month.title}</strong>
-          </MonthTitle>
-          <Goal>{month.goal}</Goal>
+        {programData.map((month) => (
+          <Card key={month.month}>
+            <MonthTitle>
+              <Pill>{month.month}</Pill>
+              <strong>{month.title}</strong>
+            </MonthTitle>
+            <Goal>{month.goal}</Goal>
 
-          <Table>
-            <thead>
-              <tr>
-                <th>Week</th>
-                <th>Class</th>
-                <th>Session / Project Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              {month.weeks.map((wk, idx) => (
-                <tr key={idx}>
-                  <td>{wk.week}</td>
-                  <td>{wk.classNum}</td>
-                  <td>{wk.name}</td>
-                  <td className="desc">{wk.desc}</td>
+            <Table>
+              <thead>
+                <tr>
+                  <th>Week</th>
+                  <th>Class</th>
+                  <th>Session / Project Name</th>
+                  <th>Description</th>
                 </tr>
-              ))}
-            </tbody>
-          </Table>
+              </thead>
+              <tbody>
+                {month.weeks.map((wk, idx) => (
+                  <tr key={idx}>
+                    <td>{wk.week}</td>
+                    <td>{wk.classNum}</td>
+                    <td>{wk.name}</td>
+                    <td className="desc">{wk.desc}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
 
-          <Summary>
-            <strong>Week Summary:</strong> {month.summary}
-          </Summary>
-        </Card>
-      ))}
+            <Summary>
+              <strong>Week Summary:</strong> {month.summary}
+            </Summary>
+          </Card>
+        ))}
 
-      <Footer>
-        Designed for instructors and students • Adjust pacing & complexity to
-        suit participant level
-      </Footer>
-    </Container>
+        <Footer>
+          Designed for instructors and students • Adjust pacing & complexity to
+          suit participant level
+        </Footer>
+      </Container>
+    </>
   );
 };
 
