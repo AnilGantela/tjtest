@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import {
   CoursesContainer,
   CourseCard,
@@ -84,37 +85,39 @@ const Courses = () => {
   }, []);
 
   return (
-    <CoursesContainer ref={containerRef} containervisible={containerVisible}>
-      <TextContainer1>
-        <SecondaryTitle>We Offer</SecondaryTitle>
-        <PrimaryTitle>Courses</PrimaryTitle>
-      </TextContainer1>
-      <CardsContainer>
-        {" "}
-        {courses.map((course, index) => (
-          <CourseCard
-            key={index}
-            data-index={index}
-            ref={(el) => (cardRefs.current[index] = el)}
-            isvisible={visibleCards.includes(String(index))}
-            onClick={() => navigate(course.link)}
-          >
-            <ImageContainer>
-              <img src={course.image} alt={course.title} />
-            </ImageContainer>
-            <TextContainer>
-              <CourseTitle>{course.title}</CourseTitle>
-              <CourseDescription>
-                {course.description.map((each, idx) => {
-                  return <li key={idx}>{each}</li>;
-                })}
-              </CourseDescription>
-              <CardPara>Click for full details</CardPara>
-            </TextContainer>
-          </CourseCard>
-        ))}
-      </CardsContainer>
-    </CoursesContainer>
+    <>
+      <CoursesContainer ref={containerRef} containervisible={containerVisible}>
+        <TextContainer1>
+          <SecondaryTitle>We Offer</SecondaryTitle>
+          <PrimaryTitle>Courses</PrimaryTitle>
+        </TextContainer1>
+        <CardsContainer>
+          {" "}
+          {courses.map((course, index) => (
+            <CourseCard
+              key={index}
+              data-index={index}
+              ref={(el) => (cardRefs.current[index] = el)}
+              isvisible={visibleCards.includes(String(index))}
+              onClick={() => navigate(course.link)}
+            >
+              <ImageContainer>
+                <img src={course.image} alt={course.title} />
+              </ImageContainer>
+              <TextContainer>
+                <CourseTitle>{course.title}</CourseTitle>
+                <CourseDescription>
+                  {course.description.map((each, idx) => {
+                    return <li key={idx}>{each}</li>;
+                  })}
+                </CourseDescription>
+                <CardPara>Click for full details</CardPara>
+              </TextContainer>
+            </CourseCard>
+          ))}
+        </CardsContainer>
+      </CoursesContainer>
+    </>
   );
 };
 

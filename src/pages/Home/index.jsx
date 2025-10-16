@@ -10,6 +10,7 @@ import Highlights from "../../components/Highlights";
 import Services from "../../components/Services";
 import Courses from "../../components/Courses";
 import Workshop from "../../components/Workshop";
+import StudentsRegistrationForm from "../../components/StudentsRegistrationForm";
 
 function Home() {
   const location = useLocation();
@@ -40,6 +41,9 @@ function Home() {
           <Workshop />
         </section>
         <Highlights />
+        <section id="registration" style={{ width: "90%" }}>
+          <StudentsRegistrationForm />
+        </section>
         <WhyChooseUS />
         <Services />
         <section id="about">
