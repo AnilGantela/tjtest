@@ -17,7 +17,6 @@ export const Title = styled.h2`
 
 export const FormInnerContainer = styled.div`
   width: 100%;
-  border: 1px solid red;
   display: flex;
   padding: 20px;
   gap: 5vh;
