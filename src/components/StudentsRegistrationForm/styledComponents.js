@@ -88,6 +88,9 @@ export const FormInputContainer1 = styled.div`
   gap: 2vh;
   width: 100%;
   padding: 2vh;
+  @media (max-width: 426px) {
+    padding: 0;
+  }
 `;
 
 export const FormInputContainer2 = styled.div`
