@@ -26,6 +26,9 @@ export const FormInnerContainer = styled.div`
     flex-direction: column;
     align-items: center;
   }
+  @media (max-width: 426px) {
+    padding: 0;
+  }
 `;
 
 export const FormImage = styled.img`
@@ -79,6 +82,7 @@ export const FromInputWrapper = styled.div`
   @media (max-width: 426px) {
     flex-direction: column;
     align-items: center;
+    padding: 1vh;
   }
 `;
 
@@ -99,6 +103,9 @@ export const FormInputContainer2 = styled.div`
   gap: 2vh;
   padding: 2vh;
   width: 100%;
+  @media (max-width: 426px) {
+    padding: 0;
+  }
 `;
 
 export const Input = styled.input`
