@@ -66,6 +66,7 @@ export const FormCard = styled.form`
     width: 100%;
     max-width: 400px;
     margin-bottom: 20px;
+    padding: 0;
   }
 `;
 
