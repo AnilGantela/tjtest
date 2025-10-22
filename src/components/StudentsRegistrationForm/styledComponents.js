@@ -20,7 +20,7 @@ export const FormInnerContainer = styled.div`
   display: flex;
   padding: 20px;
   gap: 5vh;
-  background-color: #fff;
+  background-color: transparent;
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -68,7 +68,7 @@ export const FormCard = styled.form`
     width: 100%;
     max-width: 400px;
     margin-bottom: 20px;
-    padding: 0;
+    padding: 1vh;
   }
 `;
 

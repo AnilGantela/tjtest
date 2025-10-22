@@ -156,9 +156,12 @@ const Index = () => {
                   name="course"
                   value={formData.course}
                   onChange={handleChange}
+                  defaultValue=""
                   required
                 >
-                  <option value="">Select Course</option>
+                  <option value="" disabled hidden>
+                    Select Course
+                  </option>
                   <option value="Robotics">Robotics</option>
                   <option value="Internet of Things (IoT)">
                     Internet of Things (IoT)
