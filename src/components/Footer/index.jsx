@@ -13,6 +13,9 @@ import {
   FooterText,
   QuickLinks,
   QuickLinkItem,
+  FooterLogoImg,
+  ReachUs,
+  ReachUsEmail,
 } from "./styledComponents";
 
 // ---- reusable animated icon ----
@@ -41,8 +44,16 @@ function AnimatedIcon({ animationData, link, hoverBackground }) {
 export default function Footer() {
   return (
     <FooterContainer>
-      <h3>Stay Connected</h3>
-
+      <FooterLogoImg
+        onClick={() => navigate("/")}
+        src="/nav-logo1.svg"
+        alt="Logo"
+      />
+      <ReachUs>
+        <ReachUsEmail href="mailto:anilkumar.gantela77@gmail.com">
+          support@talentsjunction.com
+        </ReachUsEmail>
+      </ReachUs>
       <SocialIcons>
         <AnimatedIcon
           animationData={twitterAnim}

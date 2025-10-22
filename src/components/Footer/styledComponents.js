@@ -3,22 +3,37 @@ import styled from "styled-components";
 // ---- styled components ----
 export const FooterContainer = styled.footer`
   background-color: rgba(20, 20, 40, 0.85);
-  width: 99%;
-  padding: 2rem 1rem;
+  width: 100%;
   color: #fff;
-  margin-left: auto;
-  margin-right: auto;
+`;
+
+export const FooterLogoImg = styled.img`
+  height: 25vh;
+  width: auto;
+  background: transparent;
+  margin-left: 2vh;
+  cursor: pointer;
+  @media (max-width: 425px) {
+    height: 10vh;
+  }
 `;
 
 export const SocialIcons = styled.div`
   display: flex;
-  justify-content: center; /* centers icons horizontally */
-  align-items: center; /* centers them vertically */
-  gap: 1.5rem; /* spacing between icons */
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+
   margin: 1.5rem 0;
   border: 2px solid green;
   width: fit-content;
   padding: 2vh;
+  @media (max-width: 426px) {
+    gap: 1rem;
+    width: 30%;
+    flex-wrap: wrap;
+    padding: 1vh;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -78,4 +93,18 @@ export const FooterText = styled.p`
   font-size: 0.9rem;
   color: #aaa;
   margin-top: 1rem;
+`;
+
+export const ReachUs = styled.div`
+  margin: 1rem 0;
+  text-align: center;
+`;
+
+export const ReachUsEmail = styled.a`
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  &:hover {
+    color: #ff007f;
+  }
 `;
