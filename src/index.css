@@ -28,9 +28,3 @@ body::-webkit-scrollbar {
     display: none !important; /* Ensure hidden even if inline styles exist */
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  img {
-    filter: brightness(0) invert(1);
-  }
-}
