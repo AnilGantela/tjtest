@@ -6,6 +6,8 @@ import whatsAppAnim from "../../assets/icons/whatsApp.json";
 import instagramAnim from "../../assets/icons/instagram.json";
 import facebookAnim from "../../assets/icons/facebook.json";
 import emailAnim from "../../assets/icons/email.json";
+import whatsAppPng from "../../assets/icons/whatsapp.png";
+import mailPng from "../../assets/icons/mail.png";
 import {
   FooterContainer,
   SocialIcons,
@@ -61,7 +63,7 @@ export default function Footer() {
           />
           <ReachUs>
             <ReachUsItem>
-              <img src="src\assets\icons\whatsapp.png" alt="whats-app" />
+              <img src={whatsAppPng} alt="whats-app" />
               <a
                 href="https://chat.whatsapp.com/CgyOsfwFMhNEjL80bofQxT"
                 target="_blank"
@@ -71,7 +73,7 @@ export default function Footer() {
               </a>
             </ReachUsItem>
             <ReachUsItem>
-              <img src="src\assets\icons\mail.png" alt="mail-icon" />
+              <img src={mailPng} alt="mail-icon" />
               <a href="mailto:support@talentsjunction.com">
                 support@talentsjunction.com
               </a>
