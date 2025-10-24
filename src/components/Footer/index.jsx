@@ -5,17 +5,24 @@ import linkedinAnim from "../../assets/icons/linkedin.json";
 import whatsAppAnim from "../../assets/icons/whatsApp.json";
 import instagramAnim from "../../assets/icons/instagram.json";
 import facebookAnim from "../../assets/icons/facebook.json";
+import emailAnim from "../../assets/icons/email.json";
 import {
   FooterContainer,
   SocialIcons,
   IconWrapper,
-  ContactButton,
   FooterText,
   QuickLinks,
   QuickLinkItem,
   FooterLogoImg,
   ReachUs,
-  ReachUsEmail,
+  ReachUsItem,
+  FirstContainer,
+  SecondContainer,
+  FooterInnerContainer,
+  ThirdContainer,
+  PolicyLinks,
+  QuickLinksContainer,
+  PolicyLinksContainer,
 } from "./styledComponents";
 
 // ---- reusable animated icon ----
@@ -44,51 +51,105 @@ function AnimatedIcon({ animationData, link, hoverBackground }) {
 export default function Footer() {
   return (
     <FooterContainer>
-      <FooterLogoImg
-        onClick={() => navigate("/")}
-        src="/nav-logo1.svg"
-        alt="Logo"
-      />
-      <ReachUs>
-        <ReachUsEmail href="mailto:anilkumar.gantela77@gmail.com">
-          support@talentsjunction.com
-        </ReachUsEmail>
-      </ReachUs>
-      <SocialIcons>
-        <AnimatedIcon
-          animationData={twitterAnim}
-          link="https://x.com/JunctionTalents"
-        />
-        <AnimatedIcon
-          animationData={linkedinAnim}
-          link="https://www.linkedin.com/company/109068773/admin/dashboard/"
-        />
-        <AnimatedIcon
-          animationData={facebookAnim}
-          link="https://www.facebook.com/profile.php?id=61582184882442"
-        />
-        <AnimatedIcon
-          animationData={instagramAnim}
-          link="https://www.instagram.com/talents_junction_2023/"
-        />
-        <AnimatedIcon
-          animationData={whatsAppAnim}
-          link="https://whatsapp.com/channel/0029VbAvMiV17EmzTERjUr17"
-        />
-      </SocialIcons>
-
-      <QuickLinks>
-        <QuickLinkItem href="/about">About Us</QuickLinkItem>
-        <QuickLinkItem href="/services">Services</QuickLinkItem>
-        <QuickLinkItem href="/contact">Contact</QuickLinkItem>
-        <QuickLinkItem href="/privacy">Privacy Policy</QuickLinkItem>
-      </QuickLinks>
-
-      <ContactButton href="mailto:youremail@example.com">
-        Contact Us
-      </ContactButton>
-
-      <FooterText>© {new Date().getFullYear()} Your Company</FooterText>
+      {" "}
+      <FooterInnerContainer>
+        <FirstContainer>
+          <FooterLogoImg
+            onClick={() => navigate("/")}
+            src="/nav-logo1.svg"
+            alt="Logo"
+          />
+          <ReachUs>
+            <ReachUsItem>
+              <img src="src\assets\icons\whatsapp.png" alt="whats-app" />
+              <a
+                href="https://chat.whatsapp.com/CgyOsfwFMhNEjL80bofQxT"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Chat on WhatsApp
+              </a>
+            </ReachUsItem>
+            <ReachUsItem>
+              <img src="src\assets\icons\mail.png" alt="mail-icon" />
+              <a href="mailto:support@talentsjunction.com">
+                support@talentsjunction.com
+              </a>
+            </ReachUsItem>
+          </ReachUs>
+        </FirstContainer>
+        <SecondContainer>
+          <SocialIcons>
+            <AnimatedIcon
+              animationData={twitterAnim}
+              link="https://x.com/JunctionTalents"
+            />
+            <AnimatedIcon
+              animationData={linkedinAnim}
+              link="https://www.linkedin.com/company/109068773/admin/dashboard/"
+            />
+            <AnimatedIcon
+              animationData={facebookAnim}
+              link="https://www.facebook.com/profile.php?id=61582184882442"
+            />
+            <AnimatedIcon
+              animationData={instagramAnim}
+              link="https://www.instagram.com/talents_junction_2023/"
+            />
+            <AnimatedIcon
+              animationData={whatsAppAnim}
+              link="https://whatsapp.com/channel/0029VbAvMiV17EmzTERjUr17"
+            />
+          </SocialIcons>
+          <QuickLinksContainer>
+            <h3>Quick Links</h3>
+            <QuickLinks>
+              <QuickLinkItem href="/">Home</QuickLinkItem>
+              <QuickLinkItem href="/about-us">About Us</QuickLinkItem>
+              <QuickLinkItem href="/programs-courses">
+                Programs / Courses
+              </QuickLinkItem>
+              <QuickLinkItem href="/workshops-events">
+                Workshops / Events
+              </QuickLinkItem>
+              <QuickLinkItem href="enroll-now">
+                Admissions / Enroll Now
+              </QuickLinkItem>
+              <QuickLinkItem href="/blog">Blog / Articles</QuickLinkItem>
+              <QuickLinkItem href="/testimonials">
+                Testimonials / Success Stories
+              </QuickLinkItem>
+              <QuickLinkItem href="/careers">
+                Careers / Join Our Team
+              </QuickLinkItem>
+              <QuickLinkItem href="/faqs">FAQs</QuickLinkItem>
+              <QuickLinkItem href="/contact-us">Contact Us</QuickLinkItem>
+            </QuickLinks>
+          </QuickLinksContainer>
+        </SecondContainer>
+        <ThirdContainer>
+          <PolicyLinksContainer>
+            <h3>Policies & Resources</h3>
+            <PolicyLinks>
+              <QuickLinkItem href="/">Privacy Policy</QuickLinkItem>
+              <QuickLinkItem href="/about-us">Terms & Conditions</QuickLinkItem>
+              <QuickLinkItem href="/programs-courses">
+                Refund Policy
+              </QuickLinkItem>
+              <QuickLinkItem href="/workshops-events">
+                Help Center
+              </QuickLinkItem>
+              <QuickLinkItem href="enroll-now">Student Login</QuickLinkItem>
+              <QuickLinkItem href="/blog">Brochures</QuickLinkItem>
+              <QuickLinkItem href="/testimonials">Gallery </QuickLinkItem>
+            </PolicyLinks>
+          </PolicyLinksContainer>
+        </ThirdContainer>
+      </FooterInnerContainer>
+      <FooterText>
+        © {new Date().getFullYear()} talentsjunction.com. developed by
+        ALETNAG❤️.
+      </FooterText>
     </FooterContainer>
   );
 }

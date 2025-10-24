@@ -41,7 +41,7 @@ export const FormImage = styled.img`
 `;
 
 export const FormCard = styled.form`
-  background: #fff;
+  background: transparent;
   width: 100%;
   flex: 1;
   border-radius: 20px;

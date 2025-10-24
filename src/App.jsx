@@ -45,6 +45,15 @@ function App() {
     "/workshops/obstacle-detection",
     "/workshops/smoke-detection",
     "/workshops/bluetooth-control",
+    "/about-us",
+    "/programs-courses",
+    "/workshops-events",
+    "enroll-now",
+    "/blog",
+    "/testimonials",
+    "/careers",
+    "/faqs",
+    "/contact-us",
   ];
   return (
     <Routes>
